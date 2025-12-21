@@ -1,0 +1,14 @@
+# Redirects para URLs limpias
+# Formato: ruta_origen    ruta_destino    código_http
+
+# Página principal
+/    /index.html    200
+
+# Secciones del portafolio (redirigen a index.html con hash)
+/about    /index.html#about    200
+/skills   /index.html#skills   200
+/contact  /index.html#contact  200
+/home     /index.html#home     200
+
+# Proyectos
+/projects    /pages/project.html    200

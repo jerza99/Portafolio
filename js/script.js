@@ -8,23 +8,36 @@ if (mobileMenuButton && mobileMenu) {
     });
 }
 
-// Smooth scrolling for navigation links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+// Smooth scrolling for navigation links (maneja tanto # como rutas limpias)
+document.querySelectorAll('a[href^="#"], a[href^="/"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
-        e.preventDefault();
+        const href = this.getAttribute('href');
         
-        const targetId = this.getAttribute('href');
-        const targetElement = document.querySelector(targetId);
+        // Si es una ruta limpia que empieza con /, dejar que Netlify la maneje
+        if (href.startsWith('/') && !href.startsWith('/#')) {
+            // Permitir navegación normal para rutas limpias (/about, /projects, etc.)
+            return;
+        }
         
-        if (targetElement) {
-            window.scrollTo({
-                top: targetElement.offsetTop - 80,
-                behavior: 'smooth'
-            });
+        // Si es un hash (#), hacer scroll suave
+        if (href.startsWith('#')) {
+            e.preventDefault();
             
-            // Close mobile menu if open
-            if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
-                mobileMenu.classList.add('hidden');
+            const targetElement = document.querySelector(href);
+            
+            if (targetElement) {
+                window.scrollTo({
+                    top: targetElement.offsetTop - 80,
+                    behavior: 'smooth'
+                });
+                
+                // Actualizar URL sin recargar la página
+                history.pushState(null, null, href);
+                
+                // Close mobile menu if open
+                if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
+                    mobileMenu.classList.add('hidden');
+                }
             }
         }
     });
@@ -53,8 +66,28 @@ function updateActiveNav() {
     navLinks.forEach(link => {
         link.classList.remove('active-nav');
         const href = link.getAttribute('href');
-        // Manejar tanto "#section" como "index.html#section" o cualquier ruta con #section
-        if (href && (href === `#${current}` || href.endsWith(`#${current}`))) {
+        
+        if (!href) return;
+        
+        // Manejar diferentes formatos de href:
+        // - Rutas limpias: /about, /skills, /contact
+        // - Hashes: #about, #skills, #contact
+        // - Rutas con hash: index.html#about
+        
+        const routeMap = {
+            '/': 'home',
+            '/home': 'home',
+            '/about': 'about',
+            '/skills': 'skills',
+            '/contact': 'contact'
+        };
+        
+        // Si es una ruta limpia, convertirla a sección
+        const sectionId = routeMap[href] || 
+                         (href.startsWith('#') ? href.substring(1) : 
+                          href.includes('#') ? href.split('#')[1] : null);
+        
+        if (sectionId === current) {
             link.classList.add('active-nav');
         }
     });
@@ -95,11 +128,51 @@ window.addEventListener('componentLoaded', (event) => {
     }
 });
 
+// Scroll automático cuando la página carga con hash en la URL (desde rutas limpias)
+window.addEventListener('load', () => {
+    const hash = window.location.hash;
+    if (hash) {
+        setTimeout(() => {
+            const targetElement = document.querySelector(hash);
+            if (targetElement) {
+                window.scrollTo({
+                    top: targetElement.offsetTop - 80,
+                    behavior: 'smooth'
+                });
+                // Actualizar el nav activo después del scroll
+                setTimeout(updateActiveNav, 300);
+            }
+        }, 100);
+    } else {
+        // Si no hay hash, actualizar el nav para la sección inicial
+        updateActiveNav();
+    }
+});
+
+// Manejar navegación del navegador (botones atrás/adelante)
+window.addEventListener('popstate', () => {
+    const hash = window.location.hash;
+    if (hash) {
+        const targetElement = document.querySelector(hash);
+        if (targetElement) {
+            window.scrollTo({
+                top: targetElement.offsetTop - 80,
+                behavior: 'smooth'
+            });
+        }
+    }
+    updateActiveNav();
+});
+
 // También ejecutar después de hacer scroll suave
 document.addEventListener('click', function(e) {
-    const anchor = e.target.closest('a[href^="#"]');
+    const anchor = e.target.closest('a[href^="#"], a[href^="/"]');
     if (anchor) {
-        setTimeout(updateActiveNav, 500);
+        const href = anchor.getAttribute('href');
+        // Solo actualizar si es un hash interno
+        if (href && href.startsWith('#')) {
+            setTimeout(updateActiveNav, 500);
+        }
     }
 });
 
