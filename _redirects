@@ -11,4 +11,7 @@
 /home     /index.html#home     200
 
 # Proyectos
-/projects    /pages/project.html    200
+/projects    /pages/projects/project.html    200
+
+# Fallback (Por si escriben cualquier otra cosa)
+/* /index.html                     200
