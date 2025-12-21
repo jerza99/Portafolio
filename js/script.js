@@ -1,25 +1,26 @@
 // Mobile menu toggle
-document.addEventListener('click', function(e) {
-  const mobileMenu = document.getElementById('mobile-menu');
+document.addEventListener('DOMContentLoaded', () => {
   const mobileMenuButton = document.getElementById('mobile-menu-button');
+  const mobileMenu = document.getElementById('mobile-menu');
 
-  if (!mobileMenu || !mobileMenuButton) return;
+  if (!mobileMenuButton || !mobileMenu) return;
 
-  if (e.target.closest('#mobile-menu-button')) {
+  mobileMenuButton.addEventListener('click', (e) => {
+      e.stopPropagation(); 
       mobileMenu.classList.toggle('hidden');
-      return;
-  }
+  });
 
-  if (e.target.closest('#mobile-menu a')) {
-      mobileMenu.classList.add('hidden');
-      return;
-  }
+  mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+          mobileMenu.classList.add('hidden');
+      });
+  });
 
-  if (!e.target.closest('#mobile-menu') && !e.target.closest('#mobile-menu-button')) {
-      if (!mobileMenu.classList.contains('hidden')) {
+  document.addEventListener('click', (e) => {
+      if (!mobileMenu.classList.contains('hidden') && !mobileMenu.contains(e.target)) {
           mobileMenu.classList.add('hidden');
       }
-  }
+  });
 });
 
 // Función para configurar smooth scrolling en los enlaces
