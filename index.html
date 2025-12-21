@@ -13,66 +13,33 @@
 </head>
 <body>
     <!-- Navigation -->
-    <header class="fixed w-full top-0 z-50 bg-dark bg-opacity-95 backdrop-blur-sm border-b border-gray-800">
-        <div class="container mx-auto px-4">
-            <div class="flex justify-between items-center py-4">
-                <a href="#" class="text-neon-green font-mono font-bold text-xl">
-                    <span class="text-white">{</span> dev<span class="text-neon-green">.portfolio</span> <span class="text-white">}</span>
-                </a>
-                <nav class="hidden md:flex space-x-8">
-                    <a href="#home" class="nav-link active-nav text-sm uppercase tracking-wider font-medium hover:text-neon-green transition-colors">Inicio</a>
-                    <a href="#about" class="nav-link text-sm uppercase tracking-wider font-medium hover:text-neon-green transition-colors">Acerca de mí</a>
-                    <a href="#skills" class="nav-link text-sm uppercase tracking-wider font-medium hover:text-neon-green transition-colors">Habilidades</a>
-                    <!-- <a href="#projects" class="nav-link text-sm uppercase tracking-wider font-medium hover:text-neon-green transition-colors">Proyectos</a> -->
-                    <a href="#contact" class="nav-link text-sm uppercase tracking-wider font-medium hover:text-neon-green transition-colors">Contacto</a>
-                </nav>
-                <button id="mobile-menu-button" class="md:hidden text-white">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-                    </svg>
-                </button>
-            </div>
-        </div>
-        <!-- Mobile menu -->
-        <div id="mobile-menu" class="hidden md:hidden bg-dark border-t border-gray-800">
-            <div class="container mx-auto px-4 py-2">
-                <a href="#home" class="block py-3 hover:text-neon-green transition-colors">Inicio</a>
-                <a href="#about" class="block py-3 hover:text-neon-green transition-colors">Acerca de mí</a>
-                <a href="#skills" class="block py-3 hover:text-neon-green transition-colors">Habilidades</a>
-                <a href="#projects" class="block py-3 hover:text-neon-green transition-colors">Proyectos</a>
-                <a href="#contact" class="block py-3 hover:text-neon-green transition-colors">Contacto</a>
-            </div>
-        </div>
-    </header>
+    <div id="nav-placeholder"></div>
 
     <!-- Hero Section -->
     <section id="home" class="min-h-screen pt-20 grid-pattern flex items-center relative">
         <div class="container mx-auto px-4 py-16">
             <div class="flex flex-col md:flex-row items-center">
                 <div class="md:w-3/5 mb-10 md:mb-0">
-                    <div class="inline-block px-4 py-1 bg-dark-green bg-opacity-20 rounded-full mb-6">
-                        <span class="text-neon-green text-sm font-medium">Programador Backend en formación</span>
+                    <div class="section-badge mb-6">
+                        <span>Programador Backend en formación</span>
                     </div>
                     <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
                         Jerzayl <br> <span class="text-neon-green">Balladares</span> Badillo
                     </h1>
                     <div class="flex flex-wrap gap-4">
-                        <a href="#projects" class="px-8 py-3 bg-neon-green text-dark font-medium rounded-md hover:bg-opacity-90 transition-all">
+                        <a href="#projects" class="btn-primary">
                             Ver proyectos
                         </a>
-                        <a href="#contact" class="px-8 py-3 border border-neon-green text-neon-green font-medium rounded-md hover:bg-neon-green hover:bg-opacity-10 transition-all">
+                        <a href="#contact" class="btn-secondary">
                             Contáctame
                         </a>
                     </div>
                     <div class="mt-12 flex items-center space-x-6">
-                        <a href="https://github.com/jerza99" target="_blank" class="text-gray-400 hover:text-neon-green transition-colors">
+                        <a href="https://github.com/jerza99" target="_blank" rel="noopener noreferrer" aria-label="Visitar mi perfil de GitHub" class="text-gray-400 hover:text-neon-green transition-colors">
                             <i class="fab fa-github text-xl"></i>
                         </a>
-                        <a href="#" target="_blank" class="text-gray-400 hover:text-neon-green transition-colors">
+                        <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Visitar mi perfil de LinkedIn" class="text-gray-400 hover:text-neon-green transition-colors">
                             <i class="fab fa-linkedin-in text-xl"></i>
-                        </a>
-                        <a href="#" target="_blank" class="text-gray-400 hover:text-neon-green transition-colors">
-                            <i class="fab fa-twitter text-xl"></i>
                         </a>
                         <span class="h-6 w-px bg-gray-700"></span>
                         <a href="mailto:jerzayl99@gmail.com" class="text-gray-400 hover:text-neon-green transition-colors text-sm">
@@ -104,7 +71,7 @@
             </div>
         </div>
         <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 scroll-indicator">
-            <a href="#about" class="text-gray-400 hover:text-neon-green transition-colors">
+            <a href="#about" aria-label="Ir a la sección Acerca de mí" class="text-gray-400 hover:text-neon-green transition-colors">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
                 </svg>
@@ -118,14 +85,15 @@
             <div class="flex flex-col md:flex-row gap-16">
                 <div class="md:w-1/2">
                     <div class="sticky top-32">
-                        <div class="inline-block px-4 py-1 bg-dark-green bg-opacity-20 rounded-full mb-2">
-                            <span class="text-neon-green text-sm font-medium">Acerca de mí</span>
+                        <div class="section-badge">
+                            <span>Acerca de mí</span>
                         </div>
                         <h2 class="text-3xl md:text-4xl font-bold mb-6">Conoce mi historia y experiencia</h2>
                         <p class="text-gray-400 mb-6">
                             Soy un desarrollador backend junior apasionado por la programación y en constante aprendizaje. 
-                            Trabajo principalmente con PHP, Laravel y MySQL para crear aplicaciones web seguras, funcionales y confiables. 
-                            Estoy listo para colaborar en proyectos reales, aportar soluciones y seguir creciendo como profesional.
+                            Trabajo principalmente con C#, ASP.NET y SQL Server para crear aplicaciones seguras, funcionales y confiables. 
+                            También cuento con experiencia desarrollando APIs RESTful con PHP y Laravel. 
+                            Estoy listo para colaborar en proyectos reales, aportar código limpio y seguir creciendo profesionalmente.
                         </p>
                         <p class="text-gray-400 mb-8">
                             Me encanta aprender nuevas tecnologías y mejorar mis habilidades. 
@@ -133,7 +101,7 @@
                             Estoy emocionado por el futuro y las posibilidades que me esperan en el mundo del desarrollo web.
                         </p>
                         
-                        <a href="assets/Jerzayl_CVV.pdf" download class="inline-flex items-center text-neon-green hover:underline">
+                        <a href="assets/pdfs/CV_Jerzayl_Balladares_Backend.pdf" download class="inline-flex items-center text-neon-green hover:underline">
                             Descargar CV <i class="fas fa-arrow-right ml-2"></i>
                         </a>
                     </div>
@@ -142,109 +110,114 @@
                     <div class="space-y-8">
                         <div class="bg-light-dark p-6 rounded-lg">
                             <div class="flex items-center mb-4">
-                                <div class="w-10 h-10 bg-dark-green bg-opacity-30 rounded-md flex items-center justify-center mr-4">
+                                <div class="section-icon">
                                     <i class="fas fa-laptop-code text-neon-green"></i>
                                 </div>
                                 <h3 class="text-xl font-bold">Experiencia laboral</h3>
                             </div>
                             <div class="space-y-6">
-                                <div class="border-l-2 border-neon-green pl-4 pb-6">
+                                <div class="timeline-item-active">
                                     <div class="flex justify-between mb-1">
-                                        <h4 class="font-medium">BERYHUERT</h4>
-                                        <span class="text-neon-green text-sm">2025</span>
+                                        <h4 class="font-medium">BeryHuert</h4>
+                                        <span class="text-neon-green text-sm">Ago 2024 – Presente</span>
                                     </div>
-                                    <p class="text-sm text-gray-400 mb-2">Desarrollador Full Stack .NET.</p>
+                                    <p class="text-sm text-gray-400 mb-2">Desarrollador .NET.</p>
                                     <p class="text-gray-400 text-sm">
-                                        Desarrollador utilizando C#, .NET, jQuery, AJAX y JavaScript. 
-                                        Gestión de bases de datos en SQL Server y mantenimiento de un portal web, creación de nuevos módulos, y corrección de errores.
+                                        Mantenimiento y desarrollo de módulos en arquitectura MVC Monolítica utilizando C# y ASP.NET. 
+                                        Implementación de comunicación asíncrona mediante AJAX y JavaScript. 
+                                        Optimización de consultas y Stored Procedures en SQL Server.
                                     </p>
                                 </div>
-                                <div class="border-l-2 border-gray-700 pl-4 pb-6">
+                                <div class="timeline-item">
                                     <div class="flex justify-between mb-1">
-                                        <h4 class="font-medium">COMPRAR SITIO WEB SAS DE CV</h4>
-                                        <span class="text-neon-green text-sm">2024</span>
+                                        <h4 class="font-medium">Comprar Sitio Web S.A.S.</h4>
+                                        <span class="text-neon-green text-sm">Jun 2024 – Ago 2024</span>
                                     </div>
-                                    <p class="text-sm text-gray-400 mb-2">Becario en desarrollador backend.</p>
+                                    <p class="text-sm text-gray-400 mb-2">Desarrollador Backend PHP.</p>
                                     <p class="text-gray-400 text-sm">
-                                        Desarrollo backend de una página web, incluyendo un dashboard para visualización de información e implementación de un formulario para carga de imágenes. 
-                                        Migración de una base de datos a WordPress utilizando PHP y programación orientada a objetos.
+                                        Desarrollo backend de un dashboard administrativo utilizando PHP Puro y POO para la visualización de información y gestión de inventarios. 
+                                        Implementación de un sistema de carga de imágenes y migración exitosa de bases de datos heredadas hacia WordPress mediante scripts personalizados.
                                     </p>
                                 </div>
-                                <div class="border-l-2 border-gray-700 pl-4 pb-6">
+                                <div class="timeline-item">
                                     <div class="flex justify-between mb-1">
                                         <h4 class="font-medium">A-RENT</h4>
-                                        <span class="text-neon-green text-sm">2024</span>
+                                        <span class="text-neon-green text-sm">Ene 2023 – Jun 2023</span>
                                     </div>
-                                    <p class="text-sm text-gray-400 mb-2">Becario en desarrollador laravel.</p>
+                                    <p class="text-sm text-gray-400 mb-2">Desarrollador Backend (Laravel).</p>
                                     <p class="text-gray-400 text-sm">
-                                        Creación de una API para el envío de correos electrónicos con Laravel, personalización de plantillas y validación de datos. 
-                                        Mantenimiento del sistema de correos con gestión de versiones a través de GitHub.
+                                        Diseño de API RESTful con Laravel para automatización de correos. Integración de servicios externos (Stripo) y validación de estructuras JSON complejas. 
+                                        Colaboración mediante Git/GitHub.
                                     </p>
                                 </div>
-                                <div class="border-l-2 border-gray-700 pl-4 pb-6">
+                                <div class="timeline-item">
                                     <div class="flex justify-between mb-1">
                                         <h4 class="font-medium">Tecnológico de Estudios Superiores de Coacalco</h4>
-                                        <span class="text-neon-green text-sm">2023</span>
+                                        <span class="text-neon-green text-sm">Oct 2022 – Feb 2023</span>
                                     </div>
-                                    <p class="text-sm text-gray-400 mb-2">Residencias Profecionales.</p>
+                                    <p class="text-sm text-gray-400 mb-2">Residencias Profesionales.</p>
                                     <p class="text-gray-400 text-sm">
-                                        Diseño y desarrollo de un módulo para el sistema XOOX, enfocado en el área de egresados,
-                                        utilizando PHP, Bootstrap, CSS y HTML. Aseguró la conexión con la base de datos y el
-                                        almacenamiento eficiente de la información.
+                                        Diseño y programación del módulo de 'Seguimiento de Egresados' para el sistema de XOOX utilizando <strong>PHP, MySQL y Bootstrap</strong>. 
+                                        Implementación de formularios dinámicos y paneles de administración para la recolección y análisis de datos.
                                     </p>
                                 </div>
-                                <div class="border-l-2 border-gray-700 pl-4">
+                                <div class="timeline-item">
                                     <div class="flex justify-between mb-1">
                                         <h4 class="font-medium">Tecnológico de Estudios Superiores de Cuautitlán Izcalli</h4>
-                                        <span class="text-neon-green text-sm">2023</span>
+                                        <span class="text-neon-green text-sm">2021</span>
                                     </div>
-                                    <p class="text-sm text-gray-400 mb-2">Residencias Profecionales.</p>
+                                    <p class="text-sm text-gray-400 mb-2">Residencias Profesionales.</p>
                                     <p class="text-gray-400 text-sm">
-                                        Diseño y desarrollo de un módulo para el sistema universitario TESCI, en el apartado de
-                                        residencias profesionales. Facilitó la gestión de documentos y tareas para estudiantes y
-                                        administradores.
+                                        Desarrollo de la plataforma de 'Residencias Profesionales' para la gestión remota de documentación durante la contingencia. 
+                                        Creación de interfaces web responsivas y lógica de base de datos para el control de estatus de trámites.
                                     </p>
                                 </div>
                             </div>
                         </div>
                         <div class="bg-light-dark p-6 rounded-lg">
                             <div class="flex items-center mb-4">
-                                <div class="w-10 h-10 bg-dark-green bg-opacity-30 rounded-md flex items-center justify-center mr-4">
+                                <div class="section-icon">
                                     <i class="fas fa-graduation-cap text-neon-green"></i>
                                 </div>
                                 <h3 class="text-xl font-bold">Educación y Cursos</h3>
                             </div>
                             <div class="space-y-6">
-                                <div class="border-l-2 border-neon-green pl-4 pb-6">
+                                <div class="timeline-item-active">
                                     <div class="flex justify-between mb-1">
                                         <h4 class="font-medium">Ingeniería en Sistemas Computacionales</h4>
-                                        <span class="text-neon-green text-sm">2024</span>
+                                        <span class="text-neon-green text-sm">2025 – Presente</span>
                                     </div>
                                     <p class="text-sm text-gray-400">Tecnológico de Estudios Superiores de Coacalco</p>
                                 </div>
-                                <div class="border-l-2 border-gray-700 pl-4">
+                                <div class="timeline-item">
                                     <div class="flex justify-between mb-1">
                                         <h4 class="font-medium">Programador (Orientado a Objetos)</h4>
                                     </div>
-                                    <p class="text-sm text-gray-400">capacitate para el empleo</p>
+                                    <p class="text-sm text-gray-400">Fundación Carlos Slim</p>
                                 </div>
-                                <div class="border-l-2 border-gray-700 pl-4">
+                                <div class="timeline-item">
                                     <div class="flex justify-between mb-1">
                                         <h4 class="font-medium">Master en PHP, SQL, POO, MVC, Laravel, Symfony, WordPress</h4>
                                     </div>
                                     <p class="text-sm text-gray-400">Udemy</p>
                                 </div>
-                                <div class="border-l-2 border-gray-700 pl-4">
+                                <div class="timeline-item">
                                     <div class="flex justify-between mb-1">
                                         <h4 class="font-medium">Java: Curso profesional de Java 2024 – De cero a Master</h4>
                                     </div>
                                     <p class="text-sm text-gray-400">Udemy</p>
                                 </div>
-                                <div class="border-l-2 border-gray-700 pl-4">
+                                <div class="timeline-item">
                                     <div class="flex justify-between mb-1">
                                         <h4 class="font-medium">Administrador de Base de Datos</h4>
                                     </div>
-                                    <p class="text-sm text-gray-400">capacitate para el empleo</p>
+                                    <p class="text-sm text-gray-400">Fundación Carlos Slim</p>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="flex justify-between mb-1">
+                                        <h4 class="font-medium">Google Cloud Computing Foundations Certificate</h4>
+                                    </div>
+                                    <p class="text-sm text-gray-400">Google Cloud Skills Boost</p>
                                 </div>
                             </div>
                         </div>
@@ -258,13 +231,13 @@
     <section id="skills" class="py-20 bg-dark grid-pattern">
         <div class="container mx-auto px-4">
             <div class="text-center mb-16">
-                <div class="inline-block px-4 py-1 bg-dark-green bg-opacity-20 rounded-full mb-2">
-                    <span class="text-neon-green text-sm font-medium">Mis habilidades</span>
+                <div class="section-badge">
+                    <span>Mis habilidades</span>
                 </div>
                 <h2 class="text-3xl md:text-4xl font-bold mb-4">Experiencia técnica</h2>
                 <p class="text-gray-400 max-w-2xl mx-auto">
-                    He trabajado con diversas tecnologías y herramientas a lo largo de mi carrera. 
-                    A continuación, se presenta un resumen de mis habilidades.
+                    Mi stack tecnológico se centra en <strong>.NET</strong> y bases de datos, 
+                    complementado con herramientas modernas para el desarrollo de soluciones web completas y escalables.
                 </p>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"></div>
@@ -273,76 +246,77 @@
                     <h3 class="text-xl font-bold mb-6">Tecnologías con las que trabajo |</h3>
                     <div class="flex flex-wrap gap-6 justify-center">
                         <div class="flex flex-col items-center">
-                            <div class="w-16 h-16 bg-dark-green bg-opacity-20 rounded-lg flex items-center justify-center mb-2">
+                            <div class="tech-icon">
                                 <i class="devicon-html5-plain colored text-3xl text-neon-green"></i>
                             </div>
                             <span class="text-sm">HTML5</span>
                         </div>
                         <div class="flex flex-col items-center">
-                            <div class="w-16 h-16 bg-dark-green bg-opacity-20 rounded-lg flex items-center justify-center mb-2">
+                            <div class="tech-icon">
                                 <i class="devicon-css3-plain colored text-3xl text-neon-green"></i>
                             </div>
                             <span class="text-sm">CSS3</span>
                         </div>
                         <div class="flex flex-col items-center">
-                            <div class="w-16 h-16 bg-dark-green bg-opacity-20 rounded-lg flex items-center justify-center mb-2">
+                            <div class="tech-icon">
                                  <i class="devicon-php-plain colored text-3xl text-neon-green"></i>
                             </div>
                             <span class="text-sm">Php</span>
                         </div>
                         <div class="flex flex-col items-center">
-                            <div class="w-16 h-16 bg-dark-green bg-opacity-20 rounded-lg flex items-center justify-center mb-2">
+                            <div class="tech-icon">
                                 <i class="devicon-laravel-plain colored text-3xl"></i>
                             </div>
                             <span class="text-sm">Laravel</span>
                         </div>
                         <div class="flex flex-col items-center">
-                            <div class="w-16 h-16 bg-dark-green bg-opacity-20 rounded-lg flex items-center justify-center mb-2">
-                                <i class="fas fa-code text-3xl text-neon-green text-neon-green"></i>
+                            <div class="tech-icon">
+                                <i class="devicon-csharp-plain colored text-3xl"></i>
                             </div>
                             <span class="text-sm">C#</span>
                         </div>
                         <div class="flex flex-col items-center">
-                            <div class="w-16 h-16 bg-dark-green bg-opacity-20 rounded-lg flex items-center justify-center mb-2">
+                            <div class="tech-icon">
                                 <i class="devicon-dot-net-plain colored text-3xl text-neon-green"></i>
                             </div>
                             <span class="text-sm">.Net</span>
                         </div>
                         <div class="flex flex-col items-center">
-                            <div class="w-16 h-16 bg-dark-green bg-opacity-20 rounded-lg flex items-center justify-center mb-2">
+                            <div class="tech-icon">
                                 <i class="devicon-mysql-plain colored text-3xl text-neon-green"></i>
                             </div>
                             <span class="text-sm">Mysql</span>
                         </div>
                         <div class="flex flex-col items-center">
-                            <div class="w-16 h-16 bg-dark-green bg-opacity-20 rounded-lg flex items-center justify-center mb-2">
+                            <div class="tech-icon">
                                 <i class="devicon-java-plain colored text-3xl text-neon-green"></i>
                             </div>
                             <span class="text-sm">Java</span>
                         </div>
                         <div class="flex flex-col items-center">
-                            <div class="w-16 h-16 bg-dark-green bg-opacity-20 rounded-lg flex items-center justify-center mb-2">
-                                <i class="fab fa-git-alt text-3xl text-neon-green"></i>
+                            <div class="tech-icon">
+                                <!--<i class="fab fa-git-alt text-3xl text-neon-green"></i>-->
+                                <i class="devicon-git-plain colored text-3xl"></i>
                             </div>
                             <span class="text-sm">Git</span>
                         </div>
                         <div class="flex flex-col items-center">
-                            <div class="w-16 h-16 bg-dark-green bg-opacity-20 rounded-lg flex items-center justify-center mb-2">
-                                <i class="fas fa-network-wired text-3xl text-neon-green"></i>
-                            </div>
-                            <span class="text-sm">Ajax</span>
-                        </div>
-                        <div class="flex flex-col items-center">
-                            <div class="w-16 h-16 bg-dark-green bg-opacity-20 rounded-lg flex items-center justify-center mb-2">
+                            <div class="tech-icon">
                                 <i class="devicon-jquery-plain colored text-3xl text-neon-green"></i>
                             </div>
                             <span class="text-sm">Jquery</span>
                         </div>
                         <div class="flex flex-col items-center">
-                            <div class="w-16 h-16 bg-dark-green bg-opacity-20 rounded-lg flex items-center justify-center mb-2">
+                            <div class="tech-icon">
                                 <i class="devicon-javascript-plain colored text-3xl text-neon-green"></i>
                             </div>
                             <span class="text-sm">JavaScript</span>
+                        </div>
+                        <div class="flex flex-col items-center">
+                            <div class="w-16 h-16 bg-dark-green bg-opacity-20 rounded-lg flex items-center justify-center mb-2">
+                                <i class="devicon-bootstrap-plain colored text-3xl"></i>
+                            </div>
+                            <span class="text-sm">Bootstrap</span>
                         </div>
                     </div>
                 </div>
@@ -354,8 +328,8 @@
     <!-- <section id="projects" class="py-20 bg-darker">
         <div class="container mx-auto px-4">
             <div class="text-center mb-16">
-                <div class="inline-block px-4 py-1 bg-dark-green bg-opacity-20 rounded-full mb-2">
-                    <span class="text-neon-green text-sm font-medium">Mis Trabajo</span>
+                <div class="section-badge">
+                    <span>Mis Trabajo</span>
                 </div>
                 <h2 class="text-3xl md:text-4xl font-bold mb-4">Proyectos Destacados</h2>
                 <p class="text-gray-400 max-w-2xl mx-auto">
@@ -377,10 +351,10 @@
                             <rect x="15" y="40" width="20" height="5" rx="1" fill="#4ade80"/>
                         </svg>
                         <div class="absolute inset-0 bg-dark bg-opacity-70 opacity-0 hover:opacity-100 transition-opacity flex items-center justify-center">
-                            <a href="#" class="px-4 py-2 bg-neon-green text-dark font-medium rounded-md mr-3">
+                            <a href="#" class="btn-sm-primary">
                                 View Demo
                             </a>
-                            <a href="#" class="px-4 py-2 border border-neon-green text-neon-green font-medium rounded-md">
+                            <a href="#" class="btn-sm-secondary">
                                 Source Code
                             </a>
                         </div>
@@ -401,10 +375,10 @@
                             A full-featured online store with product management, shopping cart, and payment integration.
                         </p>
                         <div class="flex flex-wrap gap-2">
-                            <span class="bg-dark-green bg-opacity-20 text-neon-green text-xs px-3 py-1 rounded-full">React</span>
-                            <span class="bg-dark-green bg-opacity-20 text-neon-green text-xs px-3 py-1 rounded-full">Node.js</span>
-                            <span class="bg-dark-green bg-opacity-20 text-neon-green text-xs px-3 py-1 rounded-full">MongoDB</span>
-                            <span class="bg-dark-green bg-opacity-20 text-neon-green text-xs px-3 py-1 rounded-full">Stripe</span>
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">Node.js</span>
+                            <span class="tech-tag">MongoDB</span>
+                            <span class="tech-tag">Stripe</span>
                         </div>
                     </div>
                 </div> -->
@@ -421,10 +395,10 @@
                             <rect x="15" y="40" width="20" height="5" rx="1" fill="#4ade80"/>
                         </svg>
                         <div class="absolute inset-0 bg-dark bg-opacity-70 opacity-0 hover:opacity-100 transition-opacity flex items-center justify-center">
-                            <a href="#" class="px-4 py-2 bg-neon-green text-dark font-medium rounded-md mr-3">
+                            <a href="#" class="btn-sm-primary">
                                 View Demo
                             </a>
-                            <a href="#" class="px-4 py-2 border border-neon-green text-neon-green font-medium rounded-md">
+                            <a href="#" class="btn-sm-secondary">
                                 Source Code
                             </a>
                         </div>
@@ -445,9 +419,9 @@
                             A collaborative task management application with real-time updates and team features.
                         </p>
                         <div class="flex flex-wrap gap-2">
-                            <span class="bg-dark-green bg-opacity-20 text-neon-green text-xs px-3 py-1 rounded-full">Vue.js</span>
-                            <span class="bg-dark-green bg-opacity-20 text-neon-green text-xs px-3 py-1 rounded-full">Firebase</span>
-                            <span class="bg-dark-green bg-opacity-20 text-neon-green text-xs px-3 py-1 rounded-full">Tailwind CSS</span>
+                            <span class="tech-tag">Vue.js</span>
+                            <span class="tech-tag">Firebase</span>
+                            <span class="tech-tag">Tailwind CSS</span>
                         </div>
                     </div>
                 </div> -->
@@ -465,10 +439,10 @@
                             <rect x="25" y="35" width="50" height="5" rx="1" fill="#4ade80"/>
                         </svg>
                         <div class="absolute inset-0 bg-dark bg-opacity-70 opacity-0 hover:opacity-100 transition-opacity flex items-center justify-center">
-                            <a href="#" class="px-4 py-2 bg-neon-green text-dark font-medium rounded-md mr-3">
+                            <a href="#" class="btn-sm-primary">
                                 View Demo
                             </a>
-                            <a href="#" class="px-4 py-2 border border-neon-green text-neon-green font-medium rounded-md">
+                            <a href="#" class="btn-sm-secondary">
                                 Source Code
                             </a>
                         </div>
@@ -489,9 +463,9 @@
                             Interactive dashboard for visualizing complex datasets with customizable charts and filters.
                         </p>
                         <div class="flex flex-wrap gap-2">
-                            <span class="bg-dark-green bg-opacity-20 text-neon-green text-xs px-3 py-1 rounded-full">React</span>
-                            <span class="bg-dark-green bg-opacity-20 text-neon-green text-xs px-3 py-1 rounded-full">D3.js</span>
-                            <span class="bg-dark-green bg-opacity-20 text-neon-green text-xs px-3 py-1 rounded-full">Express</span>
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">D3.js</span>
+                            <span class="tech-tag">Express</span>
                         </div>
                     </div>
                 </div> -->
@@ -510,10 +484,10 @@
                             <rect x="55" y="35" width="15" height="5" rx="1" fill="#4ade80"/>
                         </svg>
                         <div class="absolute inset-0 bg-dark bg-opacity-70 opacity-0 hover:opacity-100 transition-opacity flex items-center justify-center">
-                            <a href="#" class="px-4 py-2 bg-neon-green text-dark font-medium rounded-md mr-3">
+                            <a href="#" class="btn-sm-primary">
                                 View Demo
                             </a>
-                            <a href="#" class="px-4 py-2 border border-neon-green text-neon-green font-medium rounded-md">
+                            <a href="#" class="btn-sm-secondary">
                                 Source Code
                             </a>
                         </div>
@@ -534,16 +508,16 @@
                             A social networking platform with profiles, posts, comments, and real-time messaging.
                         </p>
                         <div class="flex flex-wrap gap-2">
-                            <span class="bg-dark-green bg-opacity-20 text-neon-green text-xs px-3 py-1 rounded-full">React Native</span>
-                            <span class="bg-dark-green bg-opacity-20 text-neon-green text-xs px-3 py-1 rounded-full">GraphQL</span>
-                            <span class="bg-dark-green bg-opacity-20 text-neon-green text-xs px-3 py-1 rounded-full">Socket.io</span>
+                            <span class="tech-tag">React Native</span>
+                            <span class="tech-tag">GraphQL</span>
+                            <span class="tech-tag">Socket.io</span>
                         </div>
                     </div>
                 </div>
             </div> -->
 <!-- 
             <div class="text-center mt-12">
-                <a href="#" class="px-8 py-3 border border-neon-green text-neon-green font-medium rounded-md hover:bg-neon-green hover:bg-opacity-10 transition-all inline-flex items-center">
+                <a href="#" class="btn-secondary inline-flex items-center">
                     Ver todos los proyectos <i class="fas fa-arrow-right ml-2"></i>
                 </a>
             </div>
@@ -554,12 +528,14 @@
     <section id="contact" class="py-20 bg-dark grid-pattern">
         <div class="container mx-auto px-4">
             <div class="text-center mb-16">
-                <div class="inline-block px-4 py-1 bg-dark-green bg-opacity-20 rounded-full mb-2">
-                    <span class="text-neon-green text-sm font-medium">Ponte en contacto</span>
+                <div class="section-badge">
+                    <span>Contacto</span>
                 </div>
-                <h2 class="text-3xl md:text-4xl font-bold mb-4">Trabajemos juntos</h2>
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">¿Hablamos?</h2>
                 <p class="text-gray-400 max-w-2xl mx-auto">
-                    ¿Tienes un proyecto en mente o quieres hablar sobre posibles oportunidades? ¡No dudes en comunicarte!
+                    Estoy disponible para integrarme a equipos de desarrollo dinámicos. 
+                    Si buscas un <strong>Desarrollador Backend</strong> o quieres platicar sobre una oportunidad laboral, 
+                    ¡mi bandeja de entrada está abierta!
                 </p>
             </div>
 
@@ -569,8 +545,8 @@
                         <h3 class="text-2xl items-center text-center font-bold mb-6">Información de contacto</h3>
                         <div class="space-y-6 items-center mb-8 mx-auto w-fit">
                             <div class="flex items-center">
-                                <div class="w-12 h-12 bg-dark-green bg-opacity-20 rounded-md flex items-center justify-center mr-4">
-                                    <i class="fas fa-envelope text-neon-green"></i>
+                                <div class="contact-icon">
+                                    <i class="fas fa-envelope"></i>
                                 </div>
                                 <div>
                                     <h4 class="text-lg font-medium mb-1">Email</h4>
@@ -578,37 +554,31 @@
                                 </div>
                             </div>
                             <div class="flex items-start">
-                                <div class="w-12 h-12 bg-dark-green bg-opacity-20 rounded-md flex items-center justify-center mr-4">
-                                    <i class="fas fa-phone-alt text-neon-green"></i>
+                                <div class="contact-icon">
+                                    <i class="fas fa-phone-alt"></i>
                                 </div>
                                 <div>
-                                    <h4 class="text-lg font-medium mb-1">Telefono</h4>
+                                    <h4 class="text-lg font-medium mb-1">Teléfono</h4>
                                     <a href="tel:+1234567890" class="text-neon-green hover:underline">55-80-18-65-42</a>
                                 </div>
                             </div>
                             <div class="flex items-start">
-                                <div class="w-12 h-12 bg-dark-green bg-opacity-20 rounded-md flex items-center justify-center mr-4">
-                                    <i class="fas fa-map-marker-alt text-neon-green"></i>
+                                <div class="contact-icon">
+                                    <i class="fas fa-map-marker-alt"></i>
                                 </div>
                                 <div>
-                                    <h4 class="text-lg font-medium mb-1">Ubicacion</h4>
+                                    <h4 class="text-lg font-medium mb-1">Ubicación</h4>
                                     <p class="text-gray-400">Cuautitlan Izcalli</p>
                                 </div>
                             </div>
                         </div>
                         <h3 class="text-xl text-center font-bold mb-4">Conecta conmigo</h3>
                         <div class="flex justify-center items-center space-x-4 text-center">
-                            <a href="https://github.com/jerza99" target="_blank" class="w-10 h-10 bg-dark-green bg-opacity-20 rounded-md flex items-center justify-center text-neon-green hover:bg-opacity-30 transition-all">
+                            <a href="https://github.com/jerza99" target="_blank" rel="noopener noreferrer" aria-label="Visitar mi perfil de GitHub" class="social-icon">
                                 <i class="fab fa-github"></i>
                             </a>
-                            <a href="#" target="_blank" class="w-10 h-10 bg-dark-green bg-opacity-20 rounded-md flex items-center justify-center text-neon-green hover:bg-opacity-30 transition-all">
+                            <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Visitar mi perfil de LinkedIn" class="social-icon">
                                 <i class="fab fa-linkedin-in"></i>
-                            </a>
-                            <a href="#" target="_blank" class="w-10 h-10 bg-dark-green bg-opacity-20 rounded-md flex items-center justify-center text-neon-green hover:bg-opacity-30 transition-all">
-                                <i class="fab fa-twitter"></i>
-                            </a>
-                            <a href="#" target="_blank" class="w-10 h-10 bg-dark-green bg-opacity-20 rounded-md flex items-center justify-center text-neon-green hover:bg-opacity-30 transition-all">
-                                <i class="fab fa-instagram"></i>
                             </a>
                         </div>
                     </div>
@@ -650,35 +620,15 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-darker py-8 border-t border-gray-800">
-        <div class="container mx-auto px-4">
-            <div class="flex flex-col md:flex-row justify-between items-center">
-                <div class="mb-6 md:mb-0">
-                    <a href="#" class="text-neon-green font-mono font-bold text-xl">
-                        <span class="text-white">{</span> dev<span class="text-neon-green">.portfolio</span> <span class="text-white">}</span>
-                    </a>
-                </div>
-                <div class="flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-8">
-                    <a href="#home" class="hover:text-neon-green transition-colors">Inicio</a>
-                    <a href="#about" class="hover:text-neon-green transition-colors">Acerca de mí</a>
-                    <a href="#skills" class="hover:text-neon-green transition-colors">Habilidades</a>
-                    <!-- <a href="#projects" class="hover:text-neon-green transition-colors">Proyectos</a> -->
-                    <a href="#contact" class="hover:text-neon-green transition-colors">Contacto</a>
-                </div>
-                <div class="mt-6 md:mt-0">
-                    <p class="text-gray-400 text-sm">© 2025 Developer Jerzayl Balladares Badillo. Reservados todos los derechos.</p>
-                </div>
-            </div>
-        </div>
-    </footer>
+    <div id="footer-placeholder"></div>
 
     <!-- Scroll to top button -->
-    <button id="scroll-top" class="fixed bottom-6 right-6 bg-neon-green text-dark p-3 rounded-full shadow-lg opacity-0 transition-opacity duration-300 hover:bg-opacity-90">
+    <button type="button" id="scroll-top" aria-label="Volver arriba" class="fixed bottom-6 right-6 bg-neon-green text-dark p-3 rounded-full shadow-lg opacity-0 transition-opacity duration-300 hover:bg-opacity-90">
         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
             <path fill-rule="evenodd" d="M14.707 12.707a1 1 0 01-1.414 0L10 9.414l-3.293 3.293a1 1 0 01-1.414-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 010 1.414z" clip-rule="evenodd" />
         </svg>
     </button>
-    <script src="js/nav.js"></script>
     <script src="js/script.js"></script>
+    <script src="js/layout.js"></script>
 </body>
 </html>
