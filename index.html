@@ -35,14 +35,14 @@
                         </a>
                     </div>
                     <div class="mt-12 flex items-center space-x-6">
-                        <a href="https://github.com/jerza99" target="_blank" rel="noopener noreferrer" aria-label="Visitar mi perfil de GitHub" class="text-gray-400 hover:text-neon-green transition-colors">
-                            <i class="fab fa-github text-xl"></i>
+                        <a href="https://github.com/jerza99" target="_blank" rel="noopener noreferrer" aria-label="Visitar mi perfil de GitHub" class="link-hover text-xl">
+                            <i class="fab fa-github"></i>
                         </a>
-                        <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Visitar mi perfil de LinkedIn" class="text-gray-400 hover:text-neon-green transition-colors">
-                            <i class="fab fa-linkedin-in text-xl"></i>
+                        <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Visitar mi perfil de LinkedIn" class="link-hover text-xl">
+                            <i class="fab fa-linkedin-in"></i>
                         </a>
                         <span class="h-6 w-px bg-gray-700"></span>
-                        <a href="mailto:jerzayl99@gmail.com" class="text-gray-400 hover:text-neon-green transition-colors text-sm">
+                        <a href="mailto:jerzayl99@gmail.com" class="link-hover text-sm">
                             jerzayl99@gmail.com
                         </a>
                     </div>
@@ -71,7 +71,7 @@
             </div>
         </div>
         <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 scroll-indicator">
-            <a href="#about" aria-label="Ir a la sección Acerca de mí" class="text-gray-400 hover:text-neon-green transition-colors">
+            <a href="#about" aria-label="Ir a la sección Acerca de mí" class="link-hover">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
                 </svg>
@@ -108,7 +108,7 @@
                 </div>
                 <div class="md:w-1/2">
                     <div class="space-y-8">
-                        <div class="bg-light-dark p-6 rounded-lg">
+                        <div class="section-card">
                             <div class="flex items-center mb-4">
                                 <div class="section-icon">
                                     <i class="fas fa-laptop-code text-neon-green"></i>
@@ -174,7 +174,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="bg-light-dark p-6 rounded-lg">
+                        <div class="section-card">
                             <div class="flex items-center mb-4">
                                 <div class="section-icon">
                                     <i class="fas fa-graduation-cap text-neon-green"></i>
@@ -196,7 +196,7 @@
                                     <p class="text-sm text-gray-400">Fundación Carlos Slim</p>
                                     <button 
                                         onclick="showCertificate('assets/images/Programador-certificado.jpg', 'Programador (Orientado a Objetos)')"
-                                        class="text-xs text-neon-green hover:text-white transition-colors flex items-center bg-dark-green bg-opacity-10 px-3 py-1.5 rounded border border-neon-green border-opacity-30 hover:bg-opacity-20 cursor-pointer">
+                                        class="certificate-btn">
                                         <i class="fas fa-eye mr-2"></i> Ver certificado
                                     </button>
                                 </div>
@@ -207,7 +207,7 @@
                                     <p class="text-sm text-gray-400">Udemy</p>
                                     <button 
                                         onclick="showCertificate('assets/images/php-udemy.jpg', 'Master en PHP, SQL, POO, MVC, Laravel, Symfony, WordPress')"
-                                        class="text-xs text-neon-green hover:text-white transition-colors flex items-center bg-dark-green bg-opacity-10 px-3 py-1.5 rounded border border-neon-green border-opacity-30 hover:bg-opacity-20 cursor-pointer">
+                                        class="certificate-btn">
                                         <i class="fas fa-eye mr-2"></i> Ver certificado
                                     </button>
                                 </div>
@@ -224,7 +224,7 @@
                                     <p class="text-sm text-gray-400">Fundación Carlos Slim</p>
                                     <button 
                                         onclick="showCertificate('assets/images/Base-datos-certificado.jpg', 'Administrador de Base de Datos')"
-                                        class="text-xs text-neon-green hover:text-white transition-colors flex items-center bg-dark-green bg-opacity-10 px-3 py-1.5 rounded border border-neon-green border-opacity-30 hover:bg-opacity-20 cursor-pointer">
+                                        class="certificate-btn">
                                         <i class="fas fa-eye mr-2"></i> Ver certificado
                                     </button>
                                 </div>
@@ -235,7 +235,8 @@
                                     <p class="text-sm text-gray-400">Google Cloud Skills Boost</p>
                                     <a href="https://www.credly.com/badges/d1e9b820-b03e-4cc4-8fbe-f34a23de90b7/public_url" 
                                         target="_blank"
-                                        class="text-xs text-neon-green hover:text-white transition-colors flex items-center bg-dark-green bg-opacity-10 px-3 py-1.5 rounded border border-neon-green border-opacity-30 hover:bg-opacity-20 cursor-pointer w-fit mt-2">
+                                        rel="noopener noreferrer"
+                                        class="certificate-btn w-fit mt-2">
                                             <i class="fas fa-check-circle mr-2"></i> Verificar en Credly
                                     </a>
                                 </div>
@@ -250,12 +251,12 @@
     <!-- Skills Section -->
     <section id="skills" class="py-20 bg-dark grid-pattern">
         <div class="container mx-auto px-4">
-            <div class="text-center mb-16">
+            <div class="section-header">
                 <div class="section-badge">
                     <span>Mis habilidades</span>
                 </div>
-                <h2 class="text-3xl md:text-4xl font-bold mb-4">Experiencia técnica</h2>
-                <p class="text-gray-400 max-w-2xl mx-auto">
+                <h2 class="section-title">Experiencia técnica</h2>
+                <p class="section-subtitle">
                     Mi stack tecnológico se centra en <strong>.NET</strong> y bases de datos, 
                     complementado con herramientas modernas para el desarrollo de soluciones web completas y escalables.
                 </p>
@@ -346,12 +347,12 @@
     <!-- Projects Section -->
     <section id="projects" class="py-20 bg-darker">
         <div class="container mx-auto px-4">
-            <div class="text-center mb-16">
+            <div class="section-header">
                 <div class="section-badge">
-                    <span>Mis Trabajo</span>
+                    <span>Mis Trabajos</span>
                 </div>
-                <h2 class="text-3xl md:text-4xl font-bold mb-4">Proyectos Destacados</h2>
-                <p class="text-gray-400 max-w-2xl mx-auto">
+                <h2 class="section-title">Proyectos Destacados</h2>
+                <p class="section-subtitle">
                     Aquí están algunos de mis proyectos recientes que muestran mis habilidades y experiencia en desarrollo.
                 </p>
             </div>
@@ -359,7 +360,7 @@
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <!-- Project 1 -->
                 <div class="project-card bg-light-dark rounded-lg overflow-hidden">
-                    <div class="relative h-64 overflow-hidden">
+                    <div class="project-image-container">
                         <svg class="w-full h-full" viewBox="0 0 100 60" xmlns="http://www.w3.org/2000/svg">
                             <rect width="100" height="60" fill="#1a1a1a"/>
                             <rect x="10" y="10" width="80" height="40" rx="2" fill="#222"/>
@@ -369,7 +370,7 @@
                             <rect x="15" y="35" width="45" height="3" rx="1" fill="#666"/>
                             <rect x="15" y="40" width="20" height="5" rx="1" fill="#4ade80"/>
                         </svg>
-                        <div class="absolute inset-0 bg-dark bg-opacity-70 opacity-0 hover:opacity-100 transition-opacity flex items-center justify-center">
+                        <div class="project-overlay">
                             <a href="#" class="btn-sm-primary">
                                 View Demo
                             </a>
@@ -379,21 +380,21 @@
                         </div>
                     </div>
                     <div class="p-6">
-                        <div class="flex justify-between items-center mb-3">
+                        <div class="project-header">
                             <h3 class="text-xl font-bold">E-Commerce Platform</h3>
-                            <div class="flex space-x-2">
-                                <a href="#" class="text-gray-400 hover:text-neon-green transition-colors">
+                            <div class="project-links">
+                                <a href="#" class="link-hover" aria-label="Ver código en GitHub">
                                     <i class="fab fa-github"></i>
                                 </a>
-                                <a href="#" class="text-gray-400 hover:text-neon-green transition-colors">
+                                <a href="#" class="link-hover" aria-label="Ver demo del proyecto">
                                     <i class="fas fa-external-link-alt"></i>
                                 </a>
                             </div>
                         </div>
-                        <p class="text-gray-400 mb-4">
+                        <p class="project-description">
                             A full-featured online store with product management, shopping cart, and payment integration.
                         </p>
-                        <div class="flex flex-wrap gap-2">
+                        <div class="project-tags">
                             <span class="tech-tag">React</span>
                             <span class="tech-tag">Node.js</span>
                             <span class="tech-tag">MongoDB</span>
@@ -404,7 +405,7 @@
 
                 <!-- Project 2 -->
                 <div class="project-card bg-light-dark rounded-lg overflow-hidden">
-                    <div class="relative h-64 overflow-hidden">
+                    <div class="project-image-container">
                         <svg class="w-full h-full" viewBox="0 0 100 60" xmlns="http://www.w3.org/2000/svg">
                             <rect width="100" height="60" fill="#1a1a1a"/>
                             <rect x="10" y="10" width="80" height="40" rx="2" fill="#222"/>
@@ -413,7 +414,7 @@
                             <rect x="40" y="26" width="30" height="3" rx="1" fill="#666"/>
                             <rect x="15" y="40" width="20" height="5" rx="1" fill="#4ade80"/>
                         </svg>
-                        <div class="absolute inset-0 bg-dark bg-opacity-70 opacity-0 hover:opacity-100 transition-opacity flex items-center justify-center">
+                        <div class="project-overlay">
                             <a href="#" class="btn-sm-primary">
                                 View Demo
                             </a>
@@ -423,21 +424,21 @@
                         </div>
                     </div>
                     <div class="p-6">
-                        <div class="flex justify-between items-center mb-3">
+                        <div class="project-header">
                             <h3 class="text-xl font-bold">Task Management App</h3>
-                            <div class="flex space-x-2">
-                                <a href="#" class="text-gray-400 hover:text-neon-green transition-colors">
+                            <div class="project-links">
+                                <a href="#" class="link-hover" aria-label="Ver código en GitHub">
                                     <i class="fab fa-github"></i>
                                 </a>
-                                <a href="#" class="text-gray-400 hover:text-neon-green transition-colors">
+                                <a href="#" class="link-hover" aria-label="Ver demo del proyecto">
                                     <i class="fas fa-external-link-alt"></i>
                                 </a>
                             </div>
                         </div>
-                        <p class="text-gray-400 mb-4">
+                        <p class="project-description">
                             A collaborative task management application with real-time updates and team features.
                         </p>
-                        <div class="flex flex-wrap gap-2">
+                        <div class="project-tags">
                             <span class="tech-tag">Vue.js</span>
                             <span class="tech-tag">Firebase</span>
                             <span class="tech-tag">Tailwind CSS</span>
@@ -447,7 +448,7 @@
 
                 <!-- Project 3 -->
                 <div class="project-card bg-light-dark rounded-lg overflow-hidden">
-                    <div class="relative h-64 overflow-hidden">
+                    <div class="project-image-container">
                         <svg class="w-full h-full" viewBox="0 0 100 60" xmlns="http://www.w3.org/2000/svg">
                             <rect width="100" height="60" fill="#1a1a1a"/>
                             <rect x="10" y="10" width="80" height="40" rx="2" fill="#222"/>
@@ -457,7 +458,7 @@
                             <rect x="20" y="30" width="60" height="15" rx="2" fill="#333"/>
                             <rect x="25" y="35" width="50" height="5" rx="1" fill="#4ade80"/>
                         </svg>
-                        <div class="absolute inset-0 bg-dark bg-opacity-70 opacity-0 hover:opacity-100 transition-opacity flex items-center justify-center">
+                        <div class="project-overlay">
                             <a href="#" class="btn-sm-primary">
                                 View Demo
                             </a>
@@ -467,21 +468,21 @@
                         </div>
                     </div>
                     <div class="p-6">
-                        <div class="flex justify-between items-center mb-3">
+                        <div class="project-header">
                             <h3 class="text-xl font-bold">Data Visualization Dashboard</h3>
-                            <div class="flex space-x-2">
-                                <a href="#" class="text-gray-400 hover:text-neon-green transition-colors">
+                            <div class="project-links">
+                                <a href="#" class="link-hover" aria-label="Ver código en GitHub">
                                     <i class="fab fa-github"></i>
                                 </a>
-                                <a href="#" class="text-gray-400 hover:text-neon-green transition-colors">
+                                <a href="#" class="link-hover" aria-label="Ver demo del proyecto">
                                     <i class="fas fa-external-link-alt"></i>
                                 </a>
                             </div>
                         </div>
-                        <p class="text-gray-400 mb-4">
+                        <p class="project-description">
                             Interactive dashboard for visualizing complex datasets with customizable charts and filters.
                         </p>
-                        <div class="flex flex-wrap gap-2">
+                        <div class="project-tags">
                             <span class="tech-tag">React</span>
                             <span class="tech-tag">D3.js</span>
                             <span class="tech-tag">Express</span>
@@ -491,7 +492,7 @@
 
                 <!-- Project 4 -->
                 <div class="project-card bg-light-dark rounded-lg overflow-hidden">
-                    <div class="relative h-64 overflow-hidden">
+                    <div class="project-image-container">
                         <svg class="w-full h-full" viewBox="0 0 100 60" xmlns="http://www.w3.org/2000/svg">
                             <rect width="100" height="60" fill="#1a1a1a"/>
                             <rect x="10" y="10" width="80" height="40" rx="2" fill="#222"/>
@@ -502,7 +503,7 @@
                             <rect x="55" y="18" width="25" height="4" rx="1" fill="#4ade80"/>
                             <rect x="55" y="35" width="15" height="5" rx="1" fill="#4ade80"/>
                         </svg>
-                        <div class="absolute inset-0 bg-dark bg-opacity-70 opacity-0 hover:opacity-100 transition-opacity flex items-center justify-center">
+                        <div class="project-overlay">
                             <a href="#" class="btn-sm-primary">
                                 View Demo
                             </a>
@@ -512,21 +513,21 @@
                         </div>
                     </div>
                     <div class="p-6">
-                        <div class="flex justify-between items-center mb-3">
+                        <div class="project-header">
                             <h3 class="text-xl font-bold">Social Media App</h3>
-                            <div class="flex space-x-2">
-                                <a href="#" class="text-gray-400 hover:text-neon-green transition-colors">
+                            <div class="project-links">
+                                <a href="#" class="link-hover" aria-label="Ver código en GitHub">
                                     <i class="fab fa-github"></i>
                                 </a>
-                                <a href="#" class="text-gray-400 hover:text-neon-green transition-colors">
+                                <a href="#" class="link-hover" aria-label="Ver demo del proyecto">
                                     <i class="fas fa-external-link-alt"></i>
                                 </a>
                             </div>
                         </div>
-                        <p class="text-gray-400 mb-4">
+                        <p class="project-description">
                             A social networking platform with profiles, posts, comments, and real-time messaging.
                         </p>
-                        <div class="flex flex-wrap gap-2">
+                        <div class="project-tags">
                             <span class="tech-tag">React Native</span>
                             <span class="tech-tag">GraphQL</span>
                             <span class="tech-tag">Socket.io</span>
@@ -545,12 +546,12 @@
     <!-- Contact Section -->
     <section id="contact" class="py-20 bg-dark grid-pattern">
         <div class="container mx-auto px-4">
-            <div class="text-center mb-16">
+            <div class="section-header">
                 <div class="section-badge">
                     <span>Contacto</span>
                 </div>
-                <h2 class="text-3xl md:text-4xl font-bold mb-4">¿Hablamos?</h2>
-                <p class="text-gray-400 max-w-2xl mx-auto">
+                <h2 class="section-title">¿Hablamos?</h2>
+                <p class="section-subtitle">
                     Estoy disponible para integrarme a equipos de desarrollo dinámicos. 
                     Si buscas un <strong>Desarrollador Backend</strong> o quieres platicar sobre una oportunidad laboral, 
                     ¡mi bandeja de entrada está abierta!

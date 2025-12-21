@@ -261,3 +261,116 @@
         .btn-sm-secondary:hover {
             background-color: rgba(74, 222, 128, 0.1);
         }
+
+        /* Enlaces con hover común */
+        .link-hover {
+            color: #9ca3af;
+            transition: color 0.3s ease;
+        }
+
+        .link-hover:hover {
+            color: #4ade80;
+        }
+
+        /* Tarjeta de sección */
+        .section-card {
+            background-color: #1a1a1a;
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+        }
+
+        /* Botón de certificado */
+        .certificate-btn {
+            font-size: 0.75rem;
+            color: #4ade80;
+            transition: color 0.3s ease;
+            display: flex;
+            align-items: center;
+            background-color: rgba(6, 95, 70, 0.1);
+            padding: 0.375rem 0.75rem;
+            border-radius: 0.25rem;
+            border: 1px solid rgba(74, 222, 128, 0.3);
+            cursor: pointer;
+        }
+
+        .certificate-btn:hover {
+            color: #ffffff;
+            background-color: rgba(6, 95, 70, 0.2);
+        }
+
+        /* Contenedor de imagen de proyecto */
+        .project-image-container {
+            position: relative;
+            height: 16rem;
+            overflow: hidden;
+        }
+
+        /* Overlay de proyecto */
+        .project-image-container:hover .project-overlay {
+            opacity: 1;
+        }
+
+        .project-overlay {
+            position: absolute;
+            inset: 0;
+            background-color: rgba(17, 17, 17, 0.7);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Encabezado de proyecto */
+        .project-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.75rem;
+        }
+
+        /* Links de proyecto */
+        .project-links {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        /* Descripción de proyecto */
+        .project-description {
+            color: #9ca3af;
+            margin-bottom: 1rem;
+        }
+
+        /* Tags de proyecto */
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        /* Encabezado de sección */
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        /* Título de sección */
+        .section-title {
+            font-size: 1.875rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        @media (min-width: 768px) {
+            .section-title {
+                font-size: 2.25rem;
+            }
+        }
+
+        /* Subtítulo de sección */
+        .section-subtitle {
+            color: #9ca3af;
+            max-width: 42rem;
+            margin-left: auto;
+            margin-right: auto;
+        }
