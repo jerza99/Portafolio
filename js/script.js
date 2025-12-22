@@ -78,24 +78,43 @@ function updateActiveNav() {
     }
     
     let current = '';
+    const scrollPosition = window.pageYOffset + 150; // Offset para considerar el header
     
-    // Primero verificar si hay un hash en la URL (prioridad)
-    const urlHash = window.location.hash;
-    if (urlHash) {
-        const hashSection = urlHash.substring(1); // Quitar el #
-        const sectionElement = document.querySelector(`#${hashSection}`);
-        if (sectionElement) {
-            current = hashSection;
+    // Siempre detectar la sección visible por scroll (prioridad sobre hash)
+    let closestSection = null;
+    let closestDistance = Infinity;
+    
+    sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionBottom = sectionTop + section.clientHeight;
+        const sectionId = section.getAttribute('id');
+        
+        // Verificar si la sección está visible en el viewport
+        if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
+            // Si estamos dentro de la sección, esta es la activa
+            const distance = Math.abs(scrollPosition - sectionTop);
+            if (distance < closestDistance) {
+                closestDistance = distance;
+                closestSection = sectionId;
+            }
+        } else if (scrollPosition >= sectionTop - 100 && scrollPosition < sectionTop) {
+            // Si estamos justo antes de entrar a la sección (con margen de 100px)
+            const distance = Math.abs(scrollPosition - sectionTop);
+            if (distance < closestDistance) {
+                closestDistance = distance;
+                closestSection = sectionId;
+            }
         }
-    }
+    });
     
-    // Si no hay hash en la URL, detectar por scroll
-    if (!current) {
+    // Si encontramos una sección por scroll, usarla
+    if (closestSection) {
+        current = closestSection;
+    } else {
+        // Si no encontramos ninguna, buscar la última sección que ya pasamos
         sections.forEach(section => {
             const sectionTop = section.offsetTop;
-            const sectionHeight = section.clientHeight;
-            
-            if (window.pageYOffset >= sectionTop - 150) {
+            if (scrollPosition >= sectionTop - 150) {
                 current = section.getAttribute('id');
             }
         });
@@ -104,6 +123,13 @@ function updateActiveNav() {
     // Si aún no hay current, usar 'home' por defecto
     if (!current) {
         current = 'home';
+    }
+    
+    // Actualizar el hash en la URL si cambió la sección (solo si es diferente al actual)
+    const urlHash = window.location.hash.substring(1);
+    if (current !== urlHash) {
+        // Actualizar hash sin disparar scroll
+        history.replaceState(null, null, `#${current}`);
     }
     
     navLinks.forEach(link => {
