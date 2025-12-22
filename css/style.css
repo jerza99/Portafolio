@@ -1,12 +1,8 @@
-/* ============================================
-   1. IMPORTS
-   ============================================ */
+/* 1. IMPORTS */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap');
 
-/* ============================================
-   2. :ROOT (DESIGN TOKENS)
-   ============================================ */
+/* 2. :ROOT (DESIGN TOKENS) */
 :root {
     /* Colores principales - Sincronizados con tailwind.js */
     --color-neon-green: #4ade80;
@@ -55,9 +51,7 @@
     --z-nav: 50;
 }
 
-/* ============================================
-   3. RESET / BASE
-   ============================================ */
+/* 3. RESET / BASE */
 body {
     background-color: var(--color-dark);
     color: var(--color-white);
@@ -68,9 +62,7 @@ body {
     font-family: var(--font-mono);
 }
 
-/* ============================================
-   4. ESTILOS GLOBALES
-   ============================================ */
+/* 4. ESTILOS GLOBALES */
 html {
     scroll-behavior: smooth;
 }
@@ -79,9 +71,7 @@ html {
     box-sizing: border-box;
 }
 
-/* ============================================
-   5. UTILIDADES REUTILIZABLES
-   ============================================ */
+/* 5. UTILIDADES REUTILIZABLES */
 
 /* Grid pattern */
 .grid-pattern {
@@ -152,9 +142,7 @@ html {
     animation: blink 1s step-end infinite;
 }
 
-/* ============================================
-   6. COMPONENTES
-   ============================================ */
+/* 6. COMPONENTES */
 
 /* Botones */
 .btn-primary {
@@ -410,9 +398,7 @@ html {
     margin-right: auto;
 }
 
-/* ============================================
-   7. SECCIONES / LAYOUTS
-   ============================================ */
+/* 7. SECCIONES / LAYOUTS */
 
 /* Navegación */
 .nav-link {
@@ -438,9 +424,7 @@ html {
     width: 100%;
 }
 
-/* ============================================
-   8. MEDIA QUERIES
-   ============================================ */
+/* 8. MEDIA QUERIES */
 @media (min-width: 768px) {
     .section-title {
         font-size: 2.25rem;
